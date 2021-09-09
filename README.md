@@ -56,7 +56,7 @@ const App = () => {
     },
     currencies: ['BTC', 'DOGE'],
   };
-
+# Component is optional, if not provided, the default CoinForBarter button style and text is used
   const component = () => <Text>Pay 1000</Text>;
 
   return <CoinForBarterButton component={component} config={config} />;
@@ -67,6 +67,8 @@ export default App;
 
 
 ```
+
+
 
 ### Config Parameters
 ---
