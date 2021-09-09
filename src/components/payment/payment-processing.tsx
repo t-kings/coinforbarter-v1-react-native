@@ -31,7 +31,7 @@ const Index: FC<{currency: CurrencyType}> = ({currency}) => {
 
   const openLink = () => {
     Linking.openURL(
-      `https://developers.coinforbarter.com/docs/overview-test-wallets?paymentId=${payment._id}&amount=${payment.amount}`,
+      `https://developers.coinforbarter.com/docs/overview-test-wallets?paymentId=${payment.id}&amount=${payment.amount}`,
     );
   };
   const isTestMode = config?.publicKey.substr(0, 9) === 'C4B_TEST-';

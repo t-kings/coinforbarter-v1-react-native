@@ -3,9 +3,7 @@ export interface CoinForBarterConfig {
   txRef: string;
   amount: number;
   currency: string;
-  baseCurrency?: string;
   redirectUrl?: string;
-  meta?: Record<string, any>;
   /**
    * customer is customer's email
    */
@@ -13,17 +11,17 @@ export interface CoinForBarterConfig {
   customerPhoneNumber?: string;
   customerFullName?: string;
   callback: (data: CallbackType) => void;
-  customizations?: Customizations;
+  customizations?: Customization;
   /**
    * leave empty if you want to accept all currencies
    */
   currencies: string[];
 }
 
-export interface Customizations {
-  title: string;
-  description: string;
-  logo: string;
+export interface Customization {
+  title?: string;
+  description?: string;
+  logo?: string;
 }
 
 export type CustomerType = {
@@ -55,7 +53,7 @@ export interface BodyType {
   customer: string;
   customerPhoneNumber?: string;
   customerFullName?: string;
-  customizations?: CustomizationType;
+  customizations?: Customization;
   baseCurrency?: string;
 }
 
@@ -66,6 +64,7 @@ export enum CoinForBarterStatus {
 
 export type CallbackType = {
   amount?: number;
+  amountReceived?: number;
   currency?: string;
   customer?: CustomerType;
   status: CoinForBarterStatus;
@@ -74,12 +73,6 @@ export type CallbackType = {
   baseCurrency?: string;
   baseAmount?: number;
   message: string;
-};
-
-type CustomizationType = {
-  title: string;
-  description: string;
-  logo: string;
 };
 
 export interface ConfigType extends BodyType {

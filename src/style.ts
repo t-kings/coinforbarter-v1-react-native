@@ -16,7 +16,8 @@ const Button: ViewStyle = {
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
+  maxWidth: 250,
 };
 
 const ButtonText: TextStyle = {

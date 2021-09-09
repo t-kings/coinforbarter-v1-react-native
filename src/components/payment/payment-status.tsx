@@ -33,6 +33,7 @@ const Index: FC<{
             ? 'successful'
             : 'unsuccessful',
         amount: payment.amount,
+        amountReceived: payment.amountReceived,
         currency: payment.currency,
         status:
           payment.status === PaymentStatus.Success

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import {CoinForBarterStatus, MethodTypes, RequestResponseSchema} from './types';
+import {settings} from './config';
 
 class CoinForBarterRequest {
-  private url =
-    process.env.REACT_APP_API_URL || 'https://staging-api.coinforbarter.com/v1';
+  private url = settings.url;
 
   async call(
     path = '',
@@ -43,7 +43,7 @@ class CoinForBarterRequest {
         statusCode = request.status;
       }
       return {data, status, message, statusCode};
-    } catch (error) {
+    } catch (error: any) {
       const status = CoinForBarterStatus.Error;
       if (error.response?.status && error.response?.data) {
         const {

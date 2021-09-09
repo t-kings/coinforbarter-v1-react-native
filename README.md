@@ -10,8 +10,6 @@ Integrate cryptocurrency payments for goods and services in your React Native Mo
   - [Getting Started](#getting-started)
     - [Installation](#installation)
   - [Usage](#usage)
-    - [Hooks](#hooks)
-    - [Using Button Component](#using-button-component)
   - [Deployment](#deployment)
   - [Built Using](#built-using)
   - [CoinForBarter API References](#coinforbarter-api-references)
@@ -19,7 +17,7 @@ Integrate cryptocurrency payments for goods and services in your React Native Mo
 
 ## About
 ---
-This is a react native package for implementing CoinForBarter's payment gateway with different payment methods.
+This is a react native package for implementing CoinForBarter's payment gateway.
 
 ## Getting Started
 ---
@@ -37,77 +35,35 @@ $ yarn add coinforbarter-react-native
 
 ## Usage
 ---
-### Hooks
-```bash
-import React from 'react';
-import { useCoinForBarter } from 'coinforbarter-react-native';
 
-function App() {
+```bash
+
+import React from 'react';
+import {Text} from 'react-native';
+
+import {CoinForBarterButton} from 'coinforbarter-react-native';
+
+const App = () => {
   const config = {
-    publicKey: 'xxxxxxxxxxxx',
+    publicKey: 'xxxxxxxxxxxxxxxxxxxx',
     txRef: 'xxxxxxxxxxx',
     amount: 10000,
     currency: 'NGN',
     customer: 'example@example.com',
     customerFullName: 'John Doe',
-    callback: (data) => {
+    callback: data => {
       console.log(data);
     },
     currencies: ['BTC', 'DOGE'],
   };
 
+  const component = () => <Text>Pay 1000</Text>;
 
-  const pay = useCoinForBarter(config);
+  return <CoinForBarterButton component={component} config={config} />;
+};
 
-  return (
-    <div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          pay();
-        }}
-      >
-        Custom Pay
-      </button>
-    </div>
-  );
-}
 
 export default App;
-
-```
-
-### Using Button Component
-
-```bash
-import React from 'react';
-import { CoinForBarterButton } from 'coinforbarter-react-native';
-
-function App() {
-  const config = {
-    publicKey: 'xxxxxxxxxxxx',
-    txRef: 'xxxxxxxxxxx',
-    amount: 10000,
-    currency: 'NGN',
-    customer: 'example@example.com',
-    customerFullName: 'John Doe',
-    callback: (data) => {
-      console.log(data);
-    },
-    currencies: ['BTC', 'DOGE'],
-  };
-
-
-  return (
-    <div>
-      <CoinForBarterButton config={config} text="Pay" />
-    </div>
-  );
-}
-
-export default App;
-
-
 
 
 ```
@@ -124,17 +80,9 @@ export default App;
 | customerFullName| false|full name of the customer|
 | customerPhoneNumber| false | phone number of your customer
 | currencies| false|  an array of currencies you want to accept for this transaction, leave empty to accept all currencies|
-|  redirectUrl| false | a url to be opened after a transaction ends. If provided, it is called while the callback function is ignored |
-|customizations| false | an object to customize the payment screen. E.g: {logo:'https://example.com/logo.png', description:'lorem ipsium', title:'example title'}. See [customization type](#customization-type)|
 |callback| true |  a call back function to call after a transaction ends, this is ignored if a redirect url is provided. A data object is passed to the function. See [Callback Param Type](#callback-param-type) for callback data type|
 
 
-#### Customization Type
-| Property | Required | Description |
-| ---      | ---      | ---         |
-|  title| false| a title for the payment screen|
-|description|  false | a description for the payment screen |
-|logo|false | a description for the payment screen |
 
 #### Callback Param Type
 | Property  | Description |

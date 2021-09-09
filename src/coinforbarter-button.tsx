@@ -89,6 +89,7 @@ const CoinForBarterCheckout: FC<{
           MethodTypes.Post,
           body,
         );
+
       if (status !== CoinForBarterStatus.Success) {
         setError({
           message,
@@ -109,20 +110,16 @@ const CoinForBarterCheckout: FC<{
       txRef,
       amount,
       currency,
-      meta,
       customer,
       customerPhoneNumber,
       customerFullName,
       customizations,
-      baseCurrency,
     } = config;
     const body: BodyType = {
       publicKey,
       txRef,
       amount,
       currency,
-      baseCurrency,
-      meta,
       customer,
       customerPhoneNumber,
       customerFullName,
