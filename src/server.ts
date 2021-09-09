@@ -43,7 +43,7 @@ class CoinForBarterRequest {
         statusCode = request.status;
       }
       return {data, status, message, statusCode};
-    } catch (error: any) {
+    } catch (error) {
       const status = CoinForBarterStatus.Error;
       if (error.response?.status && error.response?.data) {
         const {

@@ -49,7 +49,7 @@ We welcome direct contributions to the coinforbarter-v1-react code base. Thank y
 ##### Initial setup: 
 
 ```bash
-git clone https://github.com/t-kings/coinforbarter-v1-react.git
+git clone https://github.com/t-kings/coinforbarter-v1-react-native-native
 npm install
 
 # or 
@@ -61,7 +61,7 @@ yarn
 
 ##### Execute
 
-See the [example](https://github.com/t-kings/coinforbarter-v1-react/tree/main/example) to get started quickly.
+See the [example](https://github.com/t-kings/coinforbarter-v1-react-native/blob/main/App.tsx) to get started quickly.
 
 
 
@@ -77,11 +77,11 @@ Generally, we follow the style guidelines as suggested by the official language.
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/t-kings/coinforbarter-v1-react
+   git clone https://github.com/t-kings/coinforbarter-v1-react-native
   
    
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/t-kings/coinforbarter-v1-react
+   git remote add upstream https://github.com/t-kings/coinforbarter-v1-react-native
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
