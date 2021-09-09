@@ -1,6 +1,6 @@
 {
   "name": "coinforbarter-react-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CoinForBarter ReactNative Library - Integrate cryptocurrency payments for goods and services in your  Mobile App",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
